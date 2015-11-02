@@ -1,0 +1,12 @@
+ <div class="card item-body">
+        <img ng-show="bindTo.image" class="full-image size" ng-src="{{bindTo.image}}">
+    <h4  ng-show="bindTo.title"><i class="{{ bindTo.icon }}">  </i>{{ bindTo.title }}</h4> 
+    <div class="row">
+  		<div class="col col-90 text">
+  			<a ng-show="bindTo.detail_1"> {{ bindTo.detail_1 }}</a>
+  		</div>
+  		<div class="col col-10 text position">
+  			<i ng-show ="screenParams.showIcon" class="{{screenParams.showIcon}}"></i> 
+  		</div>
+	</div>
+</div>
