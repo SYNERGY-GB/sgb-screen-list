@@ -10,8 +10,10 @@ angular.module('sgb-screen-list', ['megazord'])
         $scope.searchQuery =  {
             value: ''
         }
+        
         $scope.filteredItems = $scope.items;
         $scope.showSearch = typeof(_screenParams.showSearch) === 'undefined'? true : _screenParams.showSearch;
+        $scope.ionRefresher = typeof(_screenParams.ionRefresher) === 'undefined'? true : _screenParams.ionRefresher;
 
         $scope.filterItems = function(searchQuery){
             var search = searchQuery.toLowerCase();
@@ -29,6 +31,31 @@ angular.module('sgb-screen-list', ['megazord'])
             $scope.filteredItems = $scope.items;
         };
 
+            //$http.get(_screenParams.url)
+                //.success(function (response) {(JSON.stringify(response))});
+
+        $scope.doListUpdate = function() {
+            var newItemId = angular.copy($scope.items[0]);
+            newItemId.id = newItemId.id + 1; 
+            $scope.items.unshift(newItemId);
+                $scope.$broadcast('scroll.refreshComplete');
+       };  
+            $scope.moreData = function() {
+            var newItemId1 = angular.copy($scope.items[0]);
+            newItemId1.id = newItemId1.id + 1; 
+            $scope.items.push(newItemId1);
+                $scope.$broadcast('scroll.refreshComplete');
+       };  
+                $scope.dataAvailable = function() {
+                    return $scope.items.length<10;
+        };
+  
+                $scope.loadMore = function() {
+                    $scope.moreData();
+                        $scope.$broadcast('scroll.infiniteScrollComplete');
+        };
+
+  
         $scope.itemClickHandler = function(item){
             //Nothing to do but fire the event
             _router.fireEvent({

@@ -1,5 +1,11 @@
 <ion-view view-title="{{ title | translate }}" class="appBackground">
-    <ion-content>
+    <ion-content class="background">
+        <ion-refresher
+            ng-show="ionRefresher"
+            pulling-text="Actualizar la lista."
+            on-refresh="doListUpdate()"
+            spinner="ripple">
+        </ion-refresher>
         <div class="searchBarView card item-input-inset" ng-show="showSearch">
             <label class="searchField item-input-wrapper">
                 <i class="icon ion-ios-search placeholder-icon"></i>
@@ -9,15 +15,9 @@
                 <i class="icon ion-close-circled searchCancelButton"></i>
             </button>
         </div>
-
-        <mz-template ng-repeat="item in filteredItems" bind-to="item" template-type="_screenParams.templateType"
+            <mz-template ng-repeat="item in filteredItems" bind-to="item" template-type="_screenParams.templateType"
             screen-params="_screenParams"   ng-click="itemClickHandler(item)">
-        </mz-template>
-
-        <div class="card" ng-show="!filteredItems.length">
-            <div class="item item-text-wrap">
-                {{'empty_search' | translate }}
-            </div>
-        </div>
-    </ion-content>
-</ion-view>
+            </mz-template>
+            <ion-infinite-scroll on-infinite="loadMore()" ng-if="dataAvailable()" distance="8%"></ion-infinite-scroll>
+        </ion-content>      
+    </ion-view>

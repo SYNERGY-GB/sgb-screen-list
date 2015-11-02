@@ -1,24 +1,25 @@
 {
   "name": "sgb-screen-list",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/SYNERGY-GB/sgb-screen-list",
   "authors": [
-    "Saul Hernandez <saul.hernandez@synergy-gb.com>"
+    "Megazord <megazord@synergy-gb.com>"
   ],
   "main": "dist/sgb-screen-list.js",
   "moduleType": [
     "globals"
   ],
-  "dependencies": {
-    "megazord-framework": "git@github.com:SYNERGY-GB/megazord-framework.git#1.0"
-  },
   "license": "Propietary",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "megazord-framework": "git@github.com:SYNERGY-GB/megazord-framework.git#1.0",
+			"angular":"1.3"
+			
+  }
 }

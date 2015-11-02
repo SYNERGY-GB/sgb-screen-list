@@ -1,4 +1,6 @@
 'use strict';
 
-var megazord = require ('megazord-sdk');
-megazord.registerScreenTasks(); 
+//Registers megazord screen development tasks.
+require('megazord-sdk').registerScreenTasks();
+
+//You may add additional tasks here using gulp.
