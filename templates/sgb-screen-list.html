@@ -1,5 +1,6 @@
 <ion-view view-title="{{ title | translate }}" class="appBackground">
     <ion-content class="background">
+        <!--pullToRefresh-->
         <ion-refresher
             ng-show="ionRefresher"
             pulling-text="Actualizar la lista."
@@ -15,9 +16,10 @@
                 <i class="icon ion-close-circled searchCancelButton"></i>
             </button>
         </div>
-            <mz-template ng-repeat="item in filteredItems" bind-to="item" template-type="_screenParams.templateType"
-            screen-params="_screenParams"   ng-click="itemClickHandler(item)">
-            </mz-template>
-            <ion-infinite-scroll on-infinite="loadMore()" ng-if="dataAvailable()" distance="8%"></ion-infinite-scroll>
+             <mz-template ng-repeat="item in filteredItems" bind-to="item" template-type="_screenParams.templateType"
+             screen-params="_screenParams"   ng-click="itemClickHandler(item)">
+             </mz-template>
+             <!--infinyteScroll-->
+             <ion-infinite-scroll on-infinite="loadMore()" ng-if="dataAvailable()" distance="8%"></ion-infinite-scroll>
         </ion-content>      
     </ion-view>
