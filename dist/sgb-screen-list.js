@@ -7,6 +7,8 @@ angular.module('sgb-screen-list', ['megazord'])
 
         _screen.initialize($scope, _screenParams);
         $scope.items = _data;
+        $scope.params = _screenParams;
+        
         $scope.searchQuery =  {
             value: ''
         }

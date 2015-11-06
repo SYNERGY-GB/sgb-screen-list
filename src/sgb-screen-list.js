@@ -1,11 +1,13 @@
 'use strict';
 angular.module('sgb-screen-list', ['megazord'])
     .controller('sgb-screen-list-controller',
-                ['_router', '_screen', '_screenParams','$stateParams', '$scope', 'lodash', 
-                function(_router, _screen, _screenParams, $stateParams, $scope, _){
+                ['_router', '_screen', '_screenParams','_data', '$scope', 'lodash', 
+                function(_router, _screen, _screenParams, _data, $scope, _){
 
         _screen.initialize($scope, _screenParams);
-        $scope.items = $stateParams.data;
+        $scope.items = _data;
+        $scope.params = _screenParams;
+        
         $scope.searchQuery =  {
             value: ''
         }
