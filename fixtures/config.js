@@ -1,6 +1,6 @@
 //Screen sample configuration (for development purposes)
 config = {
-"templateType" : "@large",
+"templateType" : "@min-detail",
 "showSearch" : false,
 "showIcon" : "ion-chevron-right",
 "ionRefresher": true,
