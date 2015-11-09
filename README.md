@@ -22,6 +22,7 @@ Se debe recibir una lista (items) donde obligatoriamente todos los ítems deben 
 - **detail_2**: subtítulo con información del ítem
 - **desc**: descripcion extensa del ítem
 - **url**: enlace a más información o detalles
+-**icon**: icono descriptivo que acompaña al titulo. 
 
 
 Adicionalmente para cada ítem, se puede proveer una lista de máximo tres recursos para indicar si el item tiene otros enlaces (por ejemplo alguna persona que tenga perfil en Linkedin, Twitter y Facebook. Cada recurso será un pequeño ícono con el enlace correspondiente. Estos recursos se identifican por resources, cada resource es un registro que tiene dos campos. El primer campo se identifica por url, que es el enlace a donde se direcciona al hacer click en cada imágen. El segundo campo es src, que es donde se encuentra la imágen (en el proyecto o dirección remota).  Estos recursos se podrán visualizar unícamente en la vista detallada del ítem.   Esta adición tiene sentido utilizarla con la opcion *@compact-left*
@@ -34,7 +35,8 @@ Adicionalmente para cada ítem, se puede proveer una lista de máximo tres recur
             "title": "<titutlo>", 
 		    "detail_1": "<subtitulo_1>", 
 		    "detail_2": "<subtitulo_2>", 
-		    "desc": "<descripcion extensa>", 
+		    "desc": "<descripcion extensa>",
+		    "icon" : "icon ion-iphone",  
 		    "image":"<enlace>", 
 		    "resources" : [ 
 			    {"url" : "www.google.com", "src" : "../resources/telephone_icon.png"}, 
