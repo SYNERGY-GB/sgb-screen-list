@@ -98,3 +98,8 @@ Para esta vista existe la posibilidad de incluir un ićono a la derecha del text
 
 ![Alt Text](https://s3.amazonaws.com/megazord-framework/balsamiq+mockups/sgb-screen-list-large.png)
 
+<h4>Opción @min-detail</h4>
+
+![Alt Text](https://s3.amazonaws.com/megazord-framework/balsamiq+mockups/sgb-screen-list-min-detail.png)
+
+
