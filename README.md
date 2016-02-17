@@ -79,8 +79,9 @@ Adicionalmente para cada ítem, se puede proveer una lista de máximo tres recur
     },
     params: {
         templateType:"@compact-left",
-        title:"Hello there! I'm Detail" ,
+        title:"Hello there! I'm List" ,
         showSearch: false,
+        showIcon:"ion-chevron-right"
     }
 },
 </pre>
