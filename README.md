@@ -67,6 +67,25 @@ Adicionalmente para cada ítem, se puede proveer una lista de máximo tres recur
 - **templateType**: Funcion o string que indica que template se va a utilizar para cada item de la lista.
 - **showIcon**: Ícono adicional que se va a mostrar en la opción de template *@compact-left*. Por ejemplo: ion-chevron-right
 
+<h3>Ejemplo de configuracion del archivo screen.ts</h3>
+<pre>
+"list":{
+    type:'sgb-screen-list',
+        dataSource:{
+        type: 'sgb-datasource-json#1.0',
+        params: {
+            path: 'https://s3-us-west-2.amazonaws.com/megazord/tutorial/exhibitors.json'
+        }
+    },
+    params: {
+        templateType:"@compact-left",
+        title:"Hello there! I'm Detail" ,
+        showSearch: false,
+    }
+},
+</pre>
+
+
 <h3>Diseño</h3>
 
 Para que cada ítem se muestre de forma distinta, se debe proveer una función en los parámetros de la pantalla bajo el nombre de templateType. Por ejemplo: 
